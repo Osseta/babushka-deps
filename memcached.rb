@@ -7,6 +7,7 @@ end
 
 dep 'memcached configured' do
   requires 'memcached.managed' #DONE
+  define_var :memcached_size, :default => '64M'
   define_var :memcached_port, :default => '11211'
   define_var :memcached_listen_ip, :default => '0.0.0.0'
   define_var :memcached_item_size_max, :default => '1M'
