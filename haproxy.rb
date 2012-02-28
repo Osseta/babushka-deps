@@ -22,7 +22,7 @@ dep 'haproxy configured' do
   define_var :timeout, :default => 300000
 
   helper(:config_file) { "/etc/haproxy/haproxy.cfg" }
-  met? { babushka_config? config_file }
+  met? { Babushka::Renderable.new(config_file).from?(dependency.load_path.parent / "haproxy/haproxy.cfg.erb") }
   meet { render_erb "haproxy/haproxy.cfg.erb", :to => config_file, :sudo => true }
 end
 

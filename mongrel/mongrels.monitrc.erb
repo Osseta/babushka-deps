@@ -1,5 +1,3 @@
-# <%= generated_by_babushka %>
-
 <% (1..var(:number_of_upstream_mongrels).to_i).each do |mongrel_index| %>
   <% port_number = var(:mongrel_port_range).gsub('x', mongrel_index.to_s) %>
 check process mongrel_<%= var(:app_name) %>_<%= port_number %>

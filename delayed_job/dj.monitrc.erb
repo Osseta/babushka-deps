@@ -1,5 +1,3 @@
-# <%= generated_by_babushka %>
-
 <% (1..var(:num_dj_workers).to_i).each do |worker_index| %>
 check process dj_<%= var(:app_name) %>_<%= worker_index %>
   with pidfile <%= "#{var(:app_pid_dir)}/delayed_job.#{worker_index}.pid" %>

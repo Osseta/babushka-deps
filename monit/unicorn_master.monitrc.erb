@@ -1,5 +1,3 @@
-# <%= generated_by_babushka %>
-
 check process unicorn_<%= var(:app_name) %>_master
   with pidfile <%= var :app_pid_dir %>/unicorn.pid
   start program = "/etc/init.d/unicorn start"
